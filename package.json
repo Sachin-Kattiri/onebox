@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "imapflow": "^1.0.200",
+    "mailparser": "^3.7.5"
+  },
+  "devDependencies": {
+    "@types/mailparser": "^3.4.6",
+    "@types/node": "^24.8.1"
+  }
+}

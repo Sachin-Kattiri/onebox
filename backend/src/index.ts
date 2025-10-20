@@ -1,16 +1,18 @@
 import express from "express";
-import cors from "cors";
 import bodyParser from "body-parser";
-import dotenv from "dotenv";
-
-dotenv.config();
+import cors from "cors";
+import searchRoutes from "./routes/searchRoutes"; // ✅ correct import
 
 const app = express();
+
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get("/api/health", (req, res) => {
-  res.json({ status: "Backend running ✅" });
+// ✅ Mount the route with `/api`
+app.use("/api", searchRoutes);
+
+app.get("/", (req, res) => {
+  res.send("✅ Onebox backend running...");
 });
 
 const PORT = process.env.PORT || 4000;
